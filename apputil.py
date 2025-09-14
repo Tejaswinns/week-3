@@ -54,7 +54,7 @@ print(bin(10)[2:])
 
 url ='https://github.com/melaniewalsh/Intro-Cultural-Analytics/raw/master/book/data/bellevue_almshouse_modified.csv'
 
-df.bellevue = pd.read_csv('url')
+df = pd.read_csv('url')
 
 #Part 1: Count missing values in each column
 df.info()
