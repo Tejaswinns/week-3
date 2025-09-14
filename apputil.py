@@ -22,7 +22,7 @@ def fib(n):
      return fib(n-1)+fib(n-2)
 
     #print first 10 Fibonacci numbers
-for i in range(10):
+  for i in range(10):
     print(fib(i), end=" ")
 
     #EXERCISE 2:
@@ -46,7 +46,7 @@ for i in range(10):
       # Recursive case: divide n by 2 and concatenate the remainder
           return to_binary(n //2) + str(n %2)
         #print binary representation of 10
-print (to_binary(10))
+    print (to_binary(10))
 # print binary representation of 10 using built-in function
 print(bin(10)[2:])
 
@@ -54,7 +54,7 @@ print(bin(10)[2:])
 
 url ='https://github.com/melaniewalsh/Intro-Cultural-Analytics/raw/master/book/data/bellevue_almshouse_modified.csv'
 
-df = pd.read_csv('url')
+df = pd.read_csv(url)
 
 #Part 1: Count missing values in each column
 df.info()
@@ -91,7 +91,7 @@ admissions_per_year = (
     # Extract year from 'date_in' column   
       .size()
       #reset index to turn the Series into a DataFrame with 'year' and 'Total_admissions' columns
-      .reset_index(name="Total_admissions")
+      .reset_index(name="total_admissions")
       .rename(columns={"date_in": "year"})
 )
 print(admissions_per_year)
