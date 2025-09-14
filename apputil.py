@@ -6,47 +6,44 @@ import pandas as pd
 # EXERCISE 1
 def fib(n):
     """
-      Recursive function to calculate the nth fibnocci number
-
-       Fibnocci series is F(0)=0, F(1)=1,F(n)=(n-1)+(n-2) for n>1
-
+    Recursive function to calculate the nth Fibonacci number
+    Fibonacci series is F(0)=0, F(1)=1,F(n)=(n-1)+(n-2) for n>1
     """
     # Base case 1:
-    if n==0:
+    if n == 0:
      return 0
     # Base case 2:
-    elif n==1 :
+    elif n == 1 :
      return 1
-    # Recursive case: sum of two previous fibnocci numbers
+    # Recursive case: sum of two previous Fibonacci numbers
     else:
-     return fib(n-1)+fib(n-2)
+     return fib(n-1) + fib(n-2)
 
     #print first 10 Fibonacci numbers
-  for i in range(10):
+
+for i in range(10):
     print(fib(i), end=" ")
 
     #EXERCISE 2:
 
-    def to_binary(n):
-
-      """ 
-      Recursive function to convert a decimal number n to its binary representation 
+def to_binary(n):
+      """ Recursive function to convert a decimal number n to its binary representation 
       Args:
         n (int): The decimal number to be converted.
-      Returns:
-        str: The binary representation of n as a string.
       """
       # Base case 1:
-      if n==0:
+      if n == 0:
        return "0"
       # Base case 2:
-      elif n==1:
+      elif n == 1:
         return "1"
       else:
       # Recursive case: divide n by 2 and concatenate the remainder
-          return to_binary(n //2) + str(n %2)
+       return to_binary(n // 2) + str(n % 2)
+       
         #print binary representation of 10
-    print (to_binary(10))
+print (to_binary(10))
+
 # print binary representation of 10 using built-in function
 print(bin(10)[2:])
 
@@ -57,13 +54,12 @@ url ='https://github.com/melaniewalsh/Intro-Cultural-Analytics/raw/master/book/d
 df = pd.read_csv(url)
 
 #Part 1: Count missing values in each column
-df.info()
 """ 
 To get the number of missing values in each column, we can use the isnull() method to create a boolean DataFrame indicating where values are missing, and then use the sum() method to count the number of True values (i.e., missing values) in each column. 
  returns a Series with the count of missing values for each column.    
 """
 #Count missing values in each column
-missing_values = df.bellevue.isnull().sum()
+missing_values = df.isnull().sum()
 print(missing_values)
 
 #Sort columns by number of missing values
