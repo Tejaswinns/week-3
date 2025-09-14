@@ -21,8 +21,8 @@ def fib(n):
 
     #print first 10 Fibonacci numbers
 
-for i in range(10):
-    print(fib(i), end=" ")
+#for i in range(10):
+    #print(fib(i), end=" ")
 
     #EXERCISE 2:
 
@@ -42,10 +42,10 @@ def to_binary(n):
        return to_binary(n // 2) + str(n % 2)
        
         #print binary representation of 10
-print (to_binary(10))
+#print (to_binary(10))
 
 # print binary representation of 10 using built-in function
-print(bin(10)[2:])
+#print(bin(10)[2:])
 
    #EXERCISE 3:
 
@@ -60,17 +60,17 @@ To get the number of missing values in each column, we can use the isnull() meth
 """
 #Count missing values in each column
 missing_values = df.isnull().sum()
-print(missing_values)
+#print(missing_values)
 
 #Sort columns by number of missing values
 sorted_missing_values = missing_values.sort_values(ascending=True)
-print(sorted_missing_values)
+#print(sorted_missing_values)
 
 #Get list of columns sorted by number of missing values
 sorted_columns = sorted_missing_values.index.tolist()
 
 #print list of columns sorted by number of missing values
-print(sorted_columns)
+#print(sorted_columns)
 
 #part 2: Return dataframe with two columns
 """
@@ -90,7 +90,7 @@ admissions_per_year = (
       .reset_index(name="total_admissions")
       .rename(columns={"date_in": "year"})
 )
-print(admissions_per_year)
+#print(admissions_per_year)
 
 #part 3:Return a series
 """
@@ -99,14 +99,33 @@ Return a series with the average age
 # showing the average age 
 avg_age_by_gender = df.groupby('gender')['age'].mean()
 # print the average
-print(avg_age_by_gender)
+#print(avg_age_by_gender)
 
 #part 4:Return 5 common professions in order of prevalence
 """
 Return a series with the 5 most common professions in order of prevalence
 """
 
-# Count the occurrences of each profession in the 'occupation' column
-common_professions = df['occupation'].value_counts()
+# Count the occurrences of each profession
+common_professions = df['profession'].value_counts()
 
-print(common_professions.head(5))
+#print(common_professions.head(5))
+
+# optional: run all exercises when this file is executed as a script
+if __name__ == "__main__":
+    # Exercise 1: Fibonacci
+    for i in range(10):
+        print(fib(i), end=" ")
+    print()
+
+    # Exercise 2: Binary
+    print(to_binary(10))
+    print(bin(10)[2:])
+
+    # Exercise 3: DataFrame outputs
+    print(missing_values)
+    print(sorted_missing_values)
+    print(sorted_columns)
+    print(admissions_per_year)
+    print(avg_age_by_gender)
+    print(common_professions.head(5))
