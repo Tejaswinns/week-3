@@ -19,12 +19,22 @@ def fib(n):
     else:
      return fib(n-1) + fib(n-2)
 
-    #print first 10 Fibonacci numbers
+    #print first 10 fibonacci numbers
 
 #for i in range(10):
     #print(fib(i), end=" ")
 
     #EXERCISE 2:
+
+def factorial(n):
+    """
+    Recursive function to calculate factorial of n.
+    0! = 1, n! = n*(n-1)! for n>0
+    """
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)
 
 def to_binary(n):
       """ Recursive function to convert a decimal number n to its binary representation 
@@ -109,23 +119,3 @@ Return a series with the 5 most common professions in order of prevalence
 # Count the occurrences of each profession
 common_professions = df['profession'].value_counts()
 
-#print(common_professions.head(5))
-
-# optional: run all exercises when this file is executed as a script
-if __name__ == "__main__":
-    # Exercise 1: Fibonacci
-    for i in range(10):
-        print(fib(i), end=" ")
-    print()
-
-    # Exercise 2: Binary
-    print(to_binary(10))
-    print(bin(10)[2:])
-
-    # Exercise 3: DataFrame outputs
-    print(missing_values)
-    print(sorted_missing_values)
-    print(sorted_columns)
-    print(admissions_per_year)
-    print(avg_age_by_gender)
-    print(common_professions.head(5))
