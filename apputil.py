@@ -1,10 +1,8 @@
 
 import pandas as pd
 
-
-# update/add code below ...
 # EXERCISE 1
-def fib(n):
+def fibonacci(n):
     """
     Recursive function to calculate the nth Fibonacci number
     Fibonacci series is F(0)=0, F(1)=1,F(n)=(n-1)+(n-2) for n>1
@@ -17,12 +15,7 @@ def fib(n):
      return 1
     # Recursive case: sum of two previous Fibonacci numbers
     else:
-     return fib(n-1) + fib(n-2)
-
-    #print first 10 fibonacci numbers
-
-#for i in range(10):
-    #print(fib(i), end=" ")
+     return fibonacci(n-1) + fibonacci(n-2)
 
     #EXERCISE 2:
 
@@ -50,12 +43,7 @@ def to_binary(n):
       else:
       # Recursive case: divide n by 2 and concatenate the remainder
        return to_binary(n // 2) + str(n % 2)
-       
-        #print binary representation of 10
-#print (to_binary(10))
-
-# print binary representation of 10 using built-in function
-#print(bin(10)[2:])
+      
 
    #EXERCISE 3:
 
@@ -100,7 +88,6 @@ admissions_per_year = (
       .reset_index(name="total_admissions")
       .rename(columns={"date_in": "year"})
 )
-#print(admissions_per_year)
 
 #part 3:Return a series
 """
@@ -108,8 +95,6 @@ Return a series with the average age
 """
 # showing the average age 
 avg_age_by_gender = df.groupby('gender')['age'].mean()
-# print the average
-#print(avg_age_by_gender)
 
 #part 4:Return 5 common professions in order of prevalence
 """
